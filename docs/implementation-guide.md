@@ -11,7 +11,7 @@ A mobile-first 3D puzzle game on a dodecahedron surface. React + react-three-fib
 ```bash
 npx create-next-app@latest . --typescript --app --no-src-dir --no-tailwind --eslint
 npm install three @react-three/fiber @react-three/drei zustand
-npm install -D @types/three jest jest-environment-jsdom @testing-library/react @testing-library/jest-dom ts-jest
+npm install -D @types/three vitest jsdom @testing-library/react @testing-library/jest-dom @vitejs/plugin-react
 ```
 
 Next.js includes the viewport meta tag by default. To explicitly set it, export a `viewport` object from `app/layout.tsx`:
@@ -266,7 +266,7 @@ Cover:
 ```bash
 npm run dev       # Next.js dev server (binds to 0.0.0.0 — accessible on local network)
 npm run ip        # print local wifi IP for phone access
-npm run test      # Jest
+npm run test      # Vitest
 npm run build     # production bundle
 npm run start     # serve production build
 ```
@@ -276,13 +276,13 @@ npm run start     # serve production build
 ## Todo List
 
 ### Phase 1 — Project scaffold
-- [ ] Init Next.js project with TypeScript and App Router (`create-next-app`)
-- [ ] Install dependencies: three, @react-three/fiber, @react-three/drei, zustand
-- [ ] Install test dependencies: jest, jest-environment-jsdom, @testing-library/react, ts-jest
-- [ ] Configure viewport in `app/layout.tsx`
-- [ ] Set up Jest config (`jest.config.ts`) with `ts-jest` and `jsdom` environment
-- [ ] Update `package.json` dev script to `next dev -H 0.0.0.0`
-- [ ] Add `"ip": "ipconfig getifaddr en0"` script to `package.json`
+- [x] Init Next.js project with TypeScript and App Router (`create-next-app`)
+- [x] Install dependencies: three, @react-three/fiber, @react-three/drei, zustand
+- [x] Install test dependencies: vitest, jsdom, @testing-library/react, @vitejs/plugin-react
+- [x] Configure viewport in `app/layout.tsx`
+- [x] Set up Vitest config (`vitest.config.ts`) with jsdom environment
+- [x] Update `package.json` dev script to `next dev -H 0.0.0.0`
+- [x] Add `"ip": "ipconfig getifaddr en0"` script to `package.json`
 
 ### Phase 2 — Engine (pure logic, no UI)
 - [ ] Write `src/engine/types.ts` — FaceId, EdgeId, FaceState, DiverState, GameState, ActionTypeDef, PuzzleSpec
